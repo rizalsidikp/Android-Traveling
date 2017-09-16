@@ -24,6 +24,10 @@
             android:screenOrientation="portrait"/>
         <activity android:name=".LearningKerja"
             android:screenOrientation="portrait"/>
+        <activity android:name=".LearningBenda"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".LearningTempat"
+            android:screenOrientation="portrait"/>
     </application>
 
 </manifest>
