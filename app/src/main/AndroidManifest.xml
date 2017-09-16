@@ -28,6 +28,8 @@
             android:screenOrientation="portrait"/>
         <activity android:name=".LearningTempat"
             android:screenOrientation="portrait"/>
+        <activity android:name=".LearningStory"
+            android:screenOrientation="portrait"/>
     </application>
 
 </manifest>
