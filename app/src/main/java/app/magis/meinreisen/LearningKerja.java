@@ -171,4 +171,10 @@ public class LearningKerja extends AppCompatActivity implements View.OnClickList
                 break;
         }
     }
+    public void onBackPressed() {
+        if(sound != null){
+            sound.stop();
+        }
+        finish();
+    }
 }

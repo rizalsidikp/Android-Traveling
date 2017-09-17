@@ -128,4 +128,10 @@ public class LearningStory extends AppCompatActivity implements View.OnClickList
                 break;
         }
     }
+    public void onBackPressed() {
+        if(sound != null){
+            sound.stop();
+        }
+        finish();
+    }
 }

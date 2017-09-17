@@ -174,4 +174,10 @@ public class LearningTempat extends AppCompatActivity implements View.OnClickLis
                 break;
         }
     }
+    public void onBackPressed() {
+        if(sound != null){
+            sound.stop();
+        }
+        finish();
+    }
 }
