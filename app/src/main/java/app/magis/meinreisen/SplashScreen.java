@@ -26,6 +26,10 @@ public class SplashScreen extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.splashscreen);
 
+        Connector con = new Connector(this);
+        con.open();
+        con.close();
+
         pesawat = (ImageView) findViewById(R.id.pesawat);
         bandara = (RelativeLayout) findViewById(R.id.bandara);
         putih = (LinearLayout) findViewById(R.id.putih);
