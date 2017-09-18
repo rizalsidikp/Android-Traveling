@@ -17,6 +17,7 @@
             android:background="#A5E6FC">
 
             <ImageView
+                android:id="@+id/logo"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:src="@drawable/logo_menu"/>
@@ -79,6 +80,7 @@
             android:layout_weight="1">
 
             <LinearLayout
+                android:id="@+id/quiz"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
