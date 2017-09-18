@@ -91,7 +91,8 @@
                         android:id="@+id/answer"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:maxLength="15"/>
+                        android:maxLength="15"
+                        android:gravity="center"/>
 
                 </LinearLayout>
 
