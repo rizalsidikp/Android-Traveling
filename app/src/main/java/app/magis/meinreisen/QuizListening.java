@@ -100,6 +100,7 @@ public class QuizListening extends AppCompatActivity implements View.OnClickList
         if(index == 4){
             Intent i = new Intent(QuizListening.this, QuizResult.class);
             i.putExtra("hasilQuiz", true);
+            i.putExtra("level", 3);
             startActivity(i);
             finish();
         }else{
