@@ -1,43 +1,82 @@
 package app.magis.meinreisen;
 
 import android.content.Intent;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageView;
 
-/**
- * Created by rizalsidikp on 17/09/17.
- */
+public class QuizListening extends AppCompatActivity implements View.OnClickListener {
 
-public class QuizMultipleChoice extends AppCompatActivity implements View.OnClickListener {
-
-    int index = 0, kesempatan = 1;
-    ImageView satu, dua, tiga;
-    Button a,b,c,d;
+    int index = 0, kesempatan = 1, listen = 4;
+    ImageView satu, dua, tiga, ksatu, kdua, ktiga;
+    Button submit, bListen;
+    EditText eAnswer;
+    MediaPlayer sound;
 
     String[] answer = {
+            "fliegen",
+            "laufen",
+            "der Urlaub",
             "das Fahrrad",
-            "fahren",
-            "die Stadt",
-            "kommen",
-            "die U-Bahn"
+            "das Flugzeug"
     };
 
-    String[][] choice = {
-            {"das Motorrad","die Straße","das Fahrrad","das Auto"},
-            {"fahren","das Auto","der Bus","der Weg"},
-            {"das Land","die Straße","der Urlaub","die Stadt"},
-            {"gehen","kommen","rennen","laufen"},
-            {"die U-Bahn","der Zug","der Bahnhof","das Flugzeug"}
-    };
+    protected void startListen(){
+        if(sound != null){
+            sound.stop();
+        }
+        switch (index){
+            case 0:
+                sound = MediaPlayer.create(QuizListening.this, R.raw.fliegen);
+                sound.start();
+                break;
+            case 1:
+                sound = MediaPlayer.create(QuizListening.this, R.raw.laufen);
+                sound.start();
+                break;
+            case 2:
+                sound = MediaPlayer.create(QuizListening.this, R.raw.der_urlaub);
+                sound.start();
+                break;
+            case 3:
+                sound = MediaPlayer.create(QuizListening.this, R.raw.der_fahrrad);
+                sound.start();
+                break;
+            case 4:
+                sound = MediaPlayer.create(QuizListening.this, R.raw.das_flugzeug);
+                sound.start();
+                break;
+            default:
+                break;
+        }
+    }
 
-    protected void setChoice(){
-        a.setText(choice[index][0]);
-        b.setText(choice[index][1]);
-        c.setText(choice[index][2]);
-        d.setText(choice[index][3]);
+    protected void setListen() {
+        listen--;
+        if(listen >= 3){
+            ksatu.setVisibility(View.VISIBLE);
+        }else{
+            ksatu.setVisibility(View.INVISIBLE);
+        }
+        if(listen >= 2){
+            kdua.setVisibility(View.VISIBLE);
+        }else{
+            kdua.setVisibility(View.INVISIBLE);
+        }
+        if(listen >= 1){
+            ktiga.setVisibility(View.VISIBLE);
+        }else{
+            ktiga.setVisibility(View.INVISIBLE);
+        }
+        if(listen == 0){
+            bListen.setVisibility(View.INVISIBLE);
+        }else{
+            bListen.setVisibility(View.VISIBLE);
+        }
     }
 
     protected void salah(){
@@ -48,7 +87,7 @@ public class QuizMultipleChoice extends AppCompatActivity implements View.OnClic
         }
         else{
             tiga.setVisibility(View.INVISIBLE);
-            Intent i = new Intent(QuizMultipleChoice.this, QuizResult.class);
+            Intent i = new Intent(QuizListening.this, QuizResult.class);
             i.putExtra("hasilQuiz", false);
             startActivity(i);
             finish();
@@ -57,44 +96,46 @@ public class QuizMultipleChoice extends AppCompatActivity implements View.OnClic
     }
 
     protected void benar(){
+        eAnswer.setText("");
         if(index == 4){
-            Intent i = new Intent(QuizMultipleChoice.this, QuizResult.class);
+            Intent i = new Intent(QuizListening.this, QuizResult.class);
             i.putExtra("hasilQuiz", true);
             startActivity(i);
             finish();
         }else{
             index++;
-            setChoice();
+            listen = 4;
+            setListen();
         }
     }
 
-    protected void cek_jawaban(int res){
-        if(answer[index] == choice[index][res]){
+    protected void cek_jawaban(){
+        if(answer[index].equals(eAnswer.getText().toString())){
             benar();
-        }else{
+        }else {
             salah();
         }
-
     }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_multichoice);
+        setContentView(R.layout.activity_listening);
 
         satu = (ImageView) findViewById(R.id.k_one);
         dua = (ImageView) findViewById(R.id.k_two);
         tiga = (ImageView) findViewById(R.id.k_three);
+        ksatu = (ImageView) findViewById(R.id.ksatu);
+        kdua = (ImageView) findViewById(R.id.kdua);
+        ktiga = (ImageView) findViewById(R.id.ktiga);
 
-        a = (Button) findViewById(R.id.a);
-        b = (Button) findViewById(R.id.d);
-        c = (Button) findViewById(R.id.c);
-        d = (Button) findViewById(R.id.b);
+        submit = (Button) findViewById(R.id.submit);
+        bListen = (Button) findViewById(R.id.listen);
 
-        a.setOnClickListener(this);
-        b.setOnClickListener(this);
-        c.setOnClickListener(this);
-        d.setOnClickListener(this);
+        eAnswer = (EditText) findViewById(R.id.answer);
+
+        submit.setOnClickListener(this);
+        bListen.setOnClickListener(this);
 
         Intent i = getIntent();
         kesempatan = i.getIntExtra("kesempatan", 1);
@@ -105,25 +146,20 @@ public class QuizMultipleChoice extends AppCompatActivity implements View.OnClic
             dua.setVisibility(View.INVISIBLE);
         }
 
-        setChoice();
+        setListen();
+
 
     }
 
     @Override
     public void onClick(View view) {
         switch (view.getId()){
-            case R.id.a:
-                cek_jawaban(0);
+            case R.id.submit:
+                cek_jawaban();
                 break;
-            case R.id.b:
-                cek_jawaban(1);
-                break;
-            case R.id.c:
-                cek_jawaban(2);
-                break;
-            case R.id.d:
-                cek_jawaban(3);
-                break;
+            case R.id.listen:
+                setListen();
+                startListen();
             default:
                 break;
         }
