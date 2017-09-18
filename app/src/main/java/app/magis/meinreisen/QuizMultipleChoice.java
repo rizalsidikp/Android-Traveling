@@ -7,10 +7,6 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 
-/**
- * Created by rizalsidikp on 17/09/17.
- */
-
 public class QuizMultipleChoice extends AppCompatActivity implements View.OnClickListener {
 
     int index = 0, kesempatan = 1;

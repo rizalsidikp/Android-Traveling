@@ -6,9 +6,6 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.LinearLayout;
 
-/**
- * Created by rizalsidikp on 16/09/17.
- */
 
 public class QuizMenu extends AppCompatActivity implements View.OnClickListener {
 

@@ -1,22 +1,13 @@
 package app.magis.meinreisen;
 
-import android.app.Dialog;
-import android.content.ActivityNotFoundException;
-import android.content.Intent;
 import android.media.MediaPlayer;
 import android.os.Bundle;
-import android.speech.RecognizerIntent;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
-import android.widget.Toast;
 
-import java.util.ArrayList;
 
-/**
- * Created by rizalsidikp on 16/09/17.
- */
 
 public class LearningStory extends AppCompatActivity implements View.OnClickListener {
 

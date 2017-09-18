@@ -5,10 +5,6 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.TextView;
 
-/**
- * Created by rizalsidikp on 17/09/17.
- */
-
 public class QuizResult extends AppCompatActivity {
 
     @Override

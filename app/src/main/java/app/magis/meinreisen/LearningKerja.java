@@ -13,12 +13,6 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
-import java.util.Locale;
-import java.util.StringTokenizer;
-
-/**
- * Created by rizalsidikp on 16/09/17.
- */
 
 public class LearningKerja extends AppCompatActivity implements View.OnClickListener {
 

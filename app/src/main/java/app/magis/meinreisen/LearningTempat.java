@@ -14,9 +14,7 @@ import android.widget.Toast;
 
 import java.util.ArrayList;
 
-/**
- * Created by rizalsidikp on 16/09/17.
- */
+
 
 public class LearningTempat extends AppCompatActivity implements View.OnClickListener {
 

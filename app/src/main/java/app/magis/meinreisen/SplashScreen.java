@@ -7,16 +7,12 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.support.annotation.RequiresApi;
 import android.support.v7.app.AppCompatActivity;
-import android.transition.Fade;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 
-/**
- * Created by rifkatr on 15/09/17.
- */
 
 public class SplashScreen extends AppCompatActivity {
 

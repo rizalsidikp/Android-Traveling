@@ -11,9 +11,6 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-/**
- * Created by rizalsidikp on 18/09/17.
- */
 
 public class QuizDragNDrop extends AppCompatActivity implements View.OnClickListener {
     TextView answerOne, answerTwo, chooseOne, chooseTwo, chooseThree, chooseFour, result;
@@ -64,8 +61,8 @@ public class QuizDragNDrop extends AppCompatActivity implements View.OnClickList
 
     protected void benar(){
         if(index == 4){
-            Intent i = new Intent(QuizDragNDrop.this, QuizResult.class);
-            i.putExtra("hasilQuiz", true);
+            Intent i = new Intent(QuizDragNDrop.this, QuizListening.class);
+            i.putExtra("kesempatan", kesempatan);
             startActivity(i);
             finish();
         }else{

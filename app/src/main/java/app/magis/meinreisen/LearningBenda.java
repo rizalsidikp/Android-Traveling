@@ -14,10 +14,6 @@ import android.widget.Toast;
 
 import java.util.ArrayList;
 
-/**
- * Created by rizalsidikp on 16/09/17.
- */
-
 public class LearningBenda extends AppCompatActivity implements View.OnClickListener {
 
     private final int REQ_CODE_SPEECH_INPUT = 100;
