@@ -18,6 +18,10 @@ public class QuizResult extends AppCompatActivity {
         Boolean hasil = i.getBooleanExtra("hasilQuiz", true);
         if(hasil){
             res_quiz.setText("Berhasil");
+            int level = i.getIntExtra("level", 0);
+            Connector con = new Connector(this);
+            con.open_level(level);
+            con.close();
         }else {
             res_quiz.setText("Gagal");
         }
