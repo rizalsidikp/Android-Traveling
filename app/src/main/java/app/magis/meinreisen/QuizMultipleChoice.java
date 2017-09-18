@@ -56,6 +56,7 @@ public class QuizMultipleChoice extends AppCompatActivity implements View.OnClic
         if(index == 4){
             Intent i = new Intent(QuizMultipleChoice.this, QuizResult.class);
             i.putExtra("hasilQuiz", true);
+            i.putExtra("level", 2);
             startActivity(i);
             finish();
         }else{
