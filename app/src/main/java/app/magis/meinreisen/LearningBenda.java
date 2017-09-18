@@ -29,7 +29,7 @@ public class LearningBenda extends AppCompatActivity implements View.OnClickList
     String[] kataKerja = {
             "das Motorrad",
             "das Schiff",
-            "der Fahrrad",
+            "das Fahrrad",
             "der Zug",
             "das Flugzeug",
             "das Auto",
