@@ -84,15 +84,33 @@
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
                     android:layout_weight="1"
-                    android:orientation="vertical"
-                    android:background="#A5E6FC">
-
-                    <TextView
-                        android:id="@+id/text_tampil"
-                        android:layout_width="match_parent"
+                    android:orientation="horizontal">
+                    <LinearLayout
+                        android:layout_width="0dp"
                         android:layout_height="match_parent"
-                        android:gravity="center"/>
+                        android:layout_weight="1"
+                        android:orientation="vertical">
 
+                        <Button
+                            android:id="@+id/a"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:text="a"/>
+
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <Button
+                            android:id="@+id/b"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:text="b"/>
+
+                    </LinearLayout>
                 </LinearLayout>
 
                 <LinearLayout
@@ -107,11 +125,10 @@
                         android:orientation="vertical">
 
                         <Button
-                            android:id="@+id/true_option"
-                            android:layout_width="wrap_content"
+                            android:id="@+id/c"
+                            android:layout_width="match_parent"
                             android:layout_height="match_parent"
-                            android:text="true"
-                            android:layout_gravity="end"/>
+                            android:text="c"/>
 
                     </LinearLayout>
                     <LinearLayout
@@ -121,11 +138,10 @@
                         android:orientation="vertical">
 
                         <Button
-                            android:id="@+id/false_option"
-                            android:layout_width="wrap_content"
+                            android:id="@+id/d"
+                            android:layout_width="match_parent"
                             android:layout_height="match_parent"
-                            android:text="false"
-                            android:layout_gravity="start"/>
+                            android:text="d"/>
 
                     </LinearLayout>
                 </LinearLayout>
