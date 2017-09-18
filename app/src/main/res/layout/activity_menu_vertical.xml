@@ -4,32 +4,32 @@
     android:layout_height="match_parent">
 
     <LinearLayout
-        android:id="@+id/kerja"
+        android:id="@+id/menu_one"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
-        android:orientation="vertical"
-        android:background="#FFFF00">
+        android:background="#FFFF00"
+        android:orientation="vertical">
 
     </LinearLayout>
 
     <LinearLayout
-        android:id="@+id/benda"
+        android:id="@+id/menu_two"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
-        android:orientation="vertical"
-        android:background="#00FFFF">
+        android:background="#00FFFF"
+        android:orientation="vertical">
 
     </LinearLayout>
 
     <LinearLayout
-        android:id="@+id/tempat"
+        android:id="@+id/menu_three"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
-        android:orientation="vertical"
-        android:background="#FF00FF">
+        android:background="#FF00FF"
+        android:orientation="vertical">
 
     </LinearLayout>
 
