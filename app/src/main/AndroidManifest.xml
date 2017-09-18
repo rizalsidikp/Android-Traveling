@@ -30,6 +30,15 @@
             android:screenOrientation="portrait"/>
         <activity android:name=".LearningStory"
             android:screenOrientation="portrait"/>
+        <activity android:name=".QuizMenu"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".QuizTrueFalse"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".QuizMultipleChoice"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".QuizResult"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".QuizDragNDrop" />
     </application>
 
 </manifest>
