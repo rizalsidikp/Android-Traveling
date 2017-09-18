@@ -38,7 +38,10 @@
             android:screenOrientation="portrait"/>
         <activity android:name=".QuizResult"
             android:screenOrientation="portrait"/>
-        <activity android:name=".QuizDragNDrop" />
+        <activity android:name=".QuizDragNDrop"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".QuizListening"
+            android:screenOrientation="portrait" />
     </application>
 
 </manifest>
