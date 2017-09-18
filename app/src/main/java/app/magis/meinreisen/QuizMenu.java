@@ -34,7 +34,7 @@ public class QuizMenu extends AppCompatActivity implements View.OnClickListener 
                 startActivity(i);
                 break;
             case R.id.menu_three:
-                i = new Intent(QuizMenu.this, LearningTempat.class);
+                i = new Intent(QuizMenu.this, QuizReading.class);
                 startActivity(i);
                 break;
             default:
