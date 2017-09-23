@@ -62,8 +62,8 @@ public class QuizReading extends AppCompatActivity implements View.OnClickListen
 
     protected void benar(){
         if(index == 4){
-            Intent i = new Intent(QuizReading.this, QuizResult.class);
-            i.putExtra("hasilQuiz", true);
+            Intent i = new Intent(QuizReading.this, QuizSpeaking.class);
+            i.putExtra("kesempatan", kesempatan);
             startActivity(i);
             finish();
         }else{

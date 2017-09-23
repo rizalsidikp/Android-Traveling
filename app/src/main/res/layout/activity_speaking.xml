@@ -25,19 +25,21 @@
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="2"
-                android:background="#ff69b4"/>
+                android:src="@drawable/nyawa"/>
             <ImageView
                 android:id="@+id/k_two"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="2"
-                android:background="#ff69b4"/>
+                android:src="@drawable/nyawa"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"/>
             <ImageView
                 android:id="@+id/k_three"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="2"
-                android:background="#ff69b4"/>
+                android:src="@drawable/nyawa"/>
 
             <LinearLayout
                 android:layout_width="0dp"
@@ -70,69 +72,7 @@
                     android:layout_height="0dp"
                     android:layout_weight="5"
                     android:orientation="vertical"
-                    android:background="#FFF">
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="0dp"
-                        android:layout_weight="5"
-                        android:orientation="vertical"
-                        android:gravity="center"
-                        >
-                        <Button
-                            android:id="@+id/listen"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center"
-                            android:text="listen"/>
-                    </LinearLayout>
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="0dp"
-                        android:layout_weight="1"
-                        android:orientation="horizontal"
-                        >
-                        <LinearLayout
-                            android:layout_width="0dp"
-                            android:layout_height="match_parent"
-                            android:layout_weight="2"></LinearLayout>
-                        <LinearLayout
-                            android:layout_width="0dp"
-                            android:layout_height="match_parent"
-                            android:layout_weight="1">
-                            <ImageView
-                                android:id="@+id/ksatu"
-                                android:layout_width="match_parent"
-                                android:layout_height="match_parent"
-                                android:src="@drawable/atas"
-                                android:layout_gravity="end"/>
-                        </LinearLayout>
-                        <LinearLayout
-                            android:layout_width="0dp"
-                            android:layout_height="match_parent"
-                            android:layout_weight="1">
-                            <ImageView
-                                android:id="@+id/kdua"
-                                android:layout_width="match_parent"
-                                android:layout_height="match_parent"
-                                android:src="@drawable/atas"/>
-                        </LinearLayout>
-                        <LinearLayout
-                            android:layout_width="0dp"
-                            android:layout_height="match_parent"
-                            android:layout_weight="1">
-                            <ImageView
-                                android:id="@+id/ktiga"
-                                android:layout_width="match_parent"
-                                android:layout_height="match_parent"
-                                android:src="@drawable/atas"/>
-                        </LinearLayout>
-                        <LinearLayout
-                            android:layout_width="0dp"
-                            android:layout_height="match_parent"
-                            android:layout_weight="2"></LinearLayout>
-                    </LinearLayout>
-
+                    android:background="@drawable/rounded_corner">
 
                 </LinearLayout>
 
@@ -143,12 +83,12 @@
                     android:orientation="vertical"
                     android:background="#A5E6FC">
 
-                    <EditText
-                        android:id="@+id/answer"
+                    <TextView
+                        android:id="@id/result"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:maxLength="15"
-                        android:gravity="center"/>
+                        android:gravity="center"
+                        android:background="#DDD"/>
 
                 </LinearLayout>
 
@@ -158,10 +98,10 @@
                     android:layout_weight="1"
                     android:orientation="vertical">
                     <Button
-                        android:id="@+id/submit"
+                        android:id="@+id/speak"
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
-                        android:text="submit"
+                        android:text="speak"
                         android:layout_gravity="center"/>
                 </LinearLayout>
 

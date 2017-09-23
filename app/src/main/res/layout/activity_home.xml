@@ -14,13 +14,13 @@
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="1"
-            android:background="#A5E6FC">
+            android:background="#8DD5EB">
 
             <ImageView
                 android:id="@+id/logo"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:src="@drawable/logo_menu"/>
+                android:src="@drawable/atasnya"/>
 
         </LinearLayout>
 
@@ -35,19 +35,12 @@
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:orientation="vertical"
-                android:background="#00A3BA">
+                android:background="#14B0BF">
 
-                <LinearLayout
+                <ImageView
                     android:layout_width="match_parent"
-                    android:layout_height="0dp"
-                    android:orientation="vertical"
-                    android:layout_weight="8"></LinearLayout>
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="0dp"
-                    android:orientation="vertical"
-                    android:layout_weight="2"
-                    android:background="#285EE8"></LinearLayout>
+                    android:layout_height="match_parent"
+                    android:src="@drawable/learning"/>
 
             </LinearLayout>
             <LinearLayout
@@ -56,19 +49,12 @@
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:orientation="vertical"
-                android:background="#F6E31C">
+                android:background="#EDB44F">
 
-                <LinearLayout
+                <ImageView
                     android:layout_width="match_parent"
-                    android:layout_height="0dp"
-                    android:orientation="vertical"
-                    android:layout_weight="8"></LinearLayout>
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="0dp"
-                    android:orientation="vertical"
-                    android:layout_weight="2"
-                    android:background="#F6C11C"></LinearLayout>
+                    android:layout_height="match_parent"
+                    android:src="@drawable/story"/>
 
             </LinearLayout>
         </LinearLayout>
@@ -85,19 +71,12 @@
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:orientation="vertical"
-                android:background="#F6E31C">
+                android:background="#58D67E">
 
-                <LinearLayout
+                <ImageView
                     android:layout_width="match_parent"
-                    android:layout_height="0dp"
-                    android:orientation="vertical"
-                    android:layout_weight="8"></LinearLayout>
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="0dp"
-                    android:orientation="vertical"
-                    android:layout_weight="2"
-                    android:background="#F6C11C"></LinearLayout>
+                    android:layout_height="match_parent"
+                    android:src="@drawable/quiz"/>
 
             </LinearLayout>
 
@@ -106,19 +85,12 @@
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:orientation="vertical"
-                android:background="#00A3BA">
+                android:background="#FF7A45">
 
-                <LinearLayout
+                <ImageView
                     android:layout_width="match_parent"
-                    android:layout_height="0dp"
-                    android:orientation="vertical"
-                    android:layout_weight="8"></LinearLayout>
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="0dp"
-                    android:orientation="vertical"
-                    android:layout_weight="2"
-                    android:background="#285EE8"></LinearLayout>
+                    android:layout_height="match_parent"
+                    android:src="@drawable/about"/>
 
             </LinearLayout>
 

@@ -9,6 +9,7 @@ import android.speech.RecognizerIntent;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -19,9 +20,9 @@ public class LearningBenda extends AppCompatActivity implements View.OnClickList
     private final int REQ_CODE_SPEECH_INPUT = 100;
     MediaPlayer sound;
     int idx = 0;
-    Button next, prev, play, speak;
-    TextView textTampil, result;
+    TextView textTampil;
     Boolean hasilnya = false;
+    ImageView gambar, next, prev, play, speak;
     String[] kataKerja = {
             "das Motorrad",
             "das Schiff",
@@ -34,6 +35,34 @@ public class LearningBenda extends AppCompatActivity implements View.OnClickList
 
     protected void setWord(){
         textTampil.setText(kataKerja[idx]);
+    }
+
+    protected void setImage() {
+        switch (idx){
+            case 0:
+                gambar.setImageResource(R.drawable.motorcycle);
+                break;
+            case 1:
+                gambar.setImageResource(R.drawable.atasnya);
+                break;
+            case 2:
+                gambar.setImageResource(R.drawable.bicycle);
+                break;
+            case 3:
+                gambar.setImageResource(R.drawable.atasnya);
+                break;
+            case 4:
+                gambar.setImageResource(R.drawable.pesawat);
+                break;
+            case 5:
+                gambar.setImageResource(R.drawable.car);
+                break;
+            case 6:
+                gambar.setImageResource(R.drawable.bus);
+                break;
+            default:
+                break;
+        }
     }
 
     protected void playSound(){
@@ -110,7 +139,6 @@ public class LearningBenda extends AppCompatActivity implements View.OnClickList
                     ArrayList<String> hasil = data
                             .getStringArrayListExtra(RecognizerIntent.EXTRA_RESULTS);
 //                  masukkan hasil array ke text
-                    result.setText(hasil.get(0));
                     if(hasil.get(0).equals(kataKerja[idx])){
                         hasilnya = true;
                     }else{
@@ -128,12 +156,13 @@ public class LearningBenda extends AppCompatActivity implements View.OnClickList
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_learning);
         textTampil = (TextView) findViewById(R.id.text_tampil);
-        result = (TextView) findViewById(R.id.result);
-        next = (Button) findViewById(R.id.next);
-        prev = (Button) findViewById(R.id.prev);
-        play = (Button) findViewById(R.id.play);
-        speak = (Button) findViewById(R.id.speak);
+        next = (ImageView) findViewById(R.id.next);
+        prev = (ImageView) findViewById(R.id.prev);
+        play = (ImageView) findViewById(R.id.play);
+        speak = (ImageView) findViewById(R.id.speak);
+        gambar = (ImageView) findViewById(R.id.img_view);
         setWord();
+        setImage();
 
         next.setOnClickListener(this);
         prev.setOnClickListener(this);
@@ -151,6 +180,7 @@ public class LearningBenda extends AppCompatActivity implements View.OnClickList
                     idx++;
                 }
                 setWord();
+                setImage();
                 break;
             case R.id.prev:
                 if(idx == 0){
@@ -159,6 +189,7 @@ public class LearningBenda extends AppCompatActivity implements View.OnClickList
                     idx--;
                 }
                 setWord();
+                setImage();
                 break;
             case R.id.play:
                 playSound();

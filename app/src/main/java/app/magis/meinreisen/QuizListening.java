@@ -13,7 +13,8 @@ public class QuizListening extends AppCompatActivity implements View.OnClickList
 
     int index = 0, kesempatan = 1, listen = 4;
     ImageView satu, dua, tiga, ksatu, kdua, ktiga;
-    Button submit, bListen;
+    Button submit;
+    ImageView bListen;
     EditText eAnswer;
     MediaPlayer sound;
 
@@ -131,7 +132,7 @@ public class QuizListening extends AppCompatActivity implements View.OnClickList
         ktiga = (ImageView) findViewById(R.id.ktiga);
 
         submit = (Button) findViewById(R.id.submit);
-        bListen = (Button) findViewById(R.id.listen);
+        bListen = (ImageView) findViewById(R.id.listen);
 
         eAnswer = (EditText) findViewById(R.id.answer);
 
