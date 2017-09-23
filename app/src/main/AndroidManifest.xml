@@ -44,6 +44,8 @@
             android:screenOrientation="portrait" />
         <activity android:name=".QuizReading"
             android:screenOrientation="portrait"/>
+        <activity android:name=".QuizSpeaking"
+            android:screenOrientation="portrait"/>
     </application>
 
 </manifest>
