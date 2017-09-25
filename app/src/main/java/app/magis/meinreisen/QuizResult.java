@@ -49,8 +49,8 @@ public class QuizResult extends AppCompatActivity {
             con.open_level(level);
             con.close();
         }else {
-            bg.setBackgroundColor(getResources().getColor(R.color.success));
-            gambar.setImageResource(R.drawable.success);
+            bg.setBackgroundColor(getResources().getColor(R.color.fail));
+            gambar.setImageResource(R.drawable.fail);
         }
         playSound(hasil);
         new Handler().postDelayed(new Runnable() {

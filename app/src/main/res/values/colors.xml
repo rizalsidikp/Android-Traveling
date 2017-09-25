@@ -6,6 +6,6 @@
     <color name="buttonColor">#6CC3BD</color>
     <color name="buttonText">#F67E7D</color>
     <color name="tulisan">#EDB44F</color>
-    <color name="fail">#E02C46</color>
-    <color name="success">#00D157</color>
+    <color name="fail">#D9474C</color>
+    <color name="success">#48C258</color>
 </resources>
