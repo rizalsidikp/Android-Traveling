@@ -106,7 +106,7 @@ public class QuizSpeaking extends AppCompatActivity implements View.OnClickListe
                 gambar.setImageResource(R.drawable.train_station);
                 break;
             case 1:
-                gambar.setImageResource(R.drawable.atasnya);
+                gambar.setImageResource(R.drawable.underground_train);
                 break;
             case 2:
                 gambar.setImageResource(R.drawable.pesawat);

@@ -72,7 +72,7 @@ public class QuizDragNDrop extends AppCompatActivity implements View.OnClickList
                 gambar.setImageResource(R.drawable.train);
                 break;
             case 2:
-                gambar.setImageResource(R.drawable.atasnya);
+                gambar.setImageResource(R.drawable.street);
                 break;
             case 3:
                 gambar.setImageResource(R.drawable.city);

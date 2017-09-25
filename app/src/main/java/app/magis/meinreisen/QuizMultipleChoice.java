@@ -71,7 +71,7 @@ public class QuizMultipleChoice extends AppCompatActivity implements View.OnClic
                 gambar.setImageResource(R.drawable.atasnya);
                 break;
             case 4:
-                gambar.setImageResource(R.drawable.atasnya);
+                gambar.setImageResource(R.drawable.underground_train);
                 break;
             default:
                 break;

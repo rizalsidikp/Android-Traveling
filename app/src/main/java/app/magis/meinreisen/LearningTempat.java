@@ -54,7 +54,7 @@ public class LearningTempat extends AppCompatActivity implements View.OnClickLis
                 gambar.setImageResource(R.drawable.city);
                 break;
             case 3:
-                gambar.setImageResource(R.drawable.atasnya);
+                gambar.setImageResource(R.drawable.underground_train);
                 break;
             case 4:
                 gambar.setImageResource(R.drawable.street);
