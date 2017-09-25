@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 
@@ -13,14 +14,14 @@ public class LearningStory extends AppCompatActivity implements View.OnClickList
 
     MediaPlayer sound;
     int idx = 0;
-    Button next, prev, play;
+    ImageView next, prev, play;
     TextView storyTampil, storyKe;
     String[] story_ke = {
-            "Story 1",
-            "Story 2",
-            "Story 3",
-            "Story 4",
-            "Story 5"
+            "Geschichte 1",
+            "Geschichte 2",
+            "Geschichte 3",
+            "Geschichte 4",
+            "Geschichte 5"
     };
 
     String[] story_tampil = {
@@ -74,9 +75,9 @@ public class LearningStory extends AppCompatActivity implements View.OnClickList
         setContentView(R.layout.activity_story);
         storyKe = (TextView) findViewById(R.id.story_ke);
         storyTampil = (TextView) findViewById(R.id.story_tampil);
-        next = (Button) findViewById(R.id.next);
-        prev = (Button) findViewById(R.id.prev);
-        play = (Button) findViewById(R.id.play);
+        next = (ImageView) findViewById(R.id.next);
+        prev = (ImageView) findViewById(R.id.prev);
+        play = (ImageView) findViewById(R.id.play);
         setStroyKe();
         setStroyTampil();
 

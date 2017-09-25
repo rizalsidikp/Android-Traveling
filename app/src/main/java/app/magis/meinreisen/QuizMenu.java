@@ -5,7 +5,9 @@ import android.database.Cursor;
 import android.graphics.Color;
 import android.graphics.ColorMatrix;
 import android.graphics.ColorMatrixColorFilter;
+import android.os.Build;
 import android.os.Bundle;
+import android.support.annotation.RequiresApi;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.LinearLayout;
@@ -15,6 +17,7 @@ public class QuizMenu extends AppCompatActivity implements View.OnClickListener 
 
     LinearLayout level_one, level_two, level_three;
 
+    @RequiresApi(api = Build.VERSION_CODES.JELLY_BEAN)
     protected void setLevel(){
         Connector con = new Connector(this);
         con.open();
@@ -22,9 +25,10 @@ public class QuizMenu extends AppCompatActivity implements View.OnClickListener 
         if(rs.moveToFirst()){
             if(rs.getInt(rs.getColumnIndex("status")) == 1){
                 level_two.setOnClickListener(this);
-                level_two.setBackgroundColor(Color.parseColor("#00FFFF"));
+                level_two.setBackground(getResources().getDrawable(R.drawable.normal));
             }else{
-                level_two.setBackgroundColor(Color.LTGRAY);
+                level_two.setBackground(getResources().getDrawable(R.drawable.normal_lock));
+
             }
         }
         rs.close();
@@ -32,9 +36,9 @@ public class QuizMenu extends AppCompatActivity implements View.OnClickListener 
         if(rs.moveToFirst()){
             if(rs.getInt(rs.getColumnIndex("status")) == 1){
                 level_three.setOnClickListener(this);
-                level_three.setBackgroundColor(Color.parseColor("#FF00FF"));
+                level_three.setBackground(getResources().getDrawable(R.drawable.hard));
             }else{
-                level_three.setBackgroundColor(Color.LTGRAY);
+                level_three.setBackground(getResources().getDrawable(R.drawable.hard_lock));
             }
         }
         rs.close();
@@ -42,6 +46,7 @@ public class QuizMenu extends AppCompatActivity implements View.OnClickListener 
 
     }
 
+    @RequiresApi(api = Build.VERSION_CODES.JELLY_BEAN)
     @Override
     protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
@@ -49,6 +54,8 @@ public class QuizMenu extends AppCompatActivity implements View.OnClickListener 
         level_one = (LinearLayout) findViewById(R.id.menu_one);
         level_two = (LinearLayout) findViewById(R.id.menu_two);
         level_three = (LinearLayout) findViewById(R.id.menu_three);
+
+        level_one.setBackground(getResources().getDrawable(R.drawable.easy));
 
         setLevel();
 

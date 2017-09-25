@@ -2,5 +2,10 @@
 <resources>
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#88C3D4</color>
-    <color name="colorAccent">#FF4081</color>
+    <color name="colorAccent">#F67E7D</color>
+    <color name="buttonColor">#6CC3BD</color>
+    <color name="buttonText">#F67E7D</color>
+    <color name="tulisan">#EDB44F</color>
+    <color name="fail">#E02C46</color>
+    <color name="success">#00D157</color>
 </resources>

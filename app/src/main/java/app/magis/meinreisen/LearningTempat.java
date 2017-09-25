@@ -3,13 +3,16 @@ package app.magis.meinreisen;
 import android.app.Dialog;
 import android.content.ActivityNotFoundException;
 import android.content.Intent;
+import android.graphics.drawable.ColorDrawable;
 import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.speech.RecognizerIntent;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.view.Window;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -28,12 +31,12 @@ public class LearningTempat extends AppCompatActivity implements View.OnClickLis
     String[] kataKerja = {
             "der Urlaub",
             "das Land",
-            "der Weg",
             "die Stadt",
             "die U-Bahn",
             "die Straße",
             "der Bahnhof"
     };
+    String resText;
 
     protected void setWord(){
         textTampil.setText(kataKerja[idx]);
@@ -45,19 +48,19 @@ public class LearningTempat extends AppCompatActivity implements View.OnClickLis
                 gambar.setImageResource(R.drawable.holiday);
                 break;
             case 1:
-                gambar.setImageResource(R.drawable.atasnya);
+                gambar.setImageResource(R.drawable.country);
                 break;
             case 2:
-                gambar.setImageResource(R.drawable.atasnya);
-                break;
-            case 3:
                 gambar.setImageResource(R.drawable.city);
                 break;
-            case 4:
+            case 3:
                 gambar.setImageResource(R.drawable.atasnya);
                 break;
+            case 4:
+                gambar.setImageResource(R.drawable.street);
+                break;
             case 5:
-                gambar.setImageResource(R.drawable.atasnya);
+                gambar.setImageResource(R.drawable.train_station);
                 break;
             default:
                 break;
@@ -79,22 +82,18 @@ public class LearningTempat extends AppCompatActivity implements View.OnClickLis
                 sound.start();
                 break;
             case 2:
-                sound = MediaPlayer.create(LearningTempat.this, R.raw.der_weg);
-                sound.start();
-                break;
-            case 3:
                 sound = MediaPlayer.create(LearningTempat.this, R.raw.die_stadt);
                 sound.start();
                 break;
-            case 4:
+            case 3:
                 sound = MediaPlayer.create(LearningTempat.this, R.raw.die_u_bahn);
                 sound.start();
                 break;
-            case 5:
+            case 4:
                 sound = MediaPlayer.create(LearningTempat.this, R.raw.die_strasse);
                 sound.start();
                 break;
-            case 6:
+            case 5:
                 sound = MediaPlayer.create(LearningTempat.this, R.raw.der_bahnhof);
                 sound.start();
                 break;
@@ -105,9 +104,24 @@ public class LearningTempat extends AppCompatActivity implements View.OnClickLis
 
     private void tampilDialog(){
         final Dialog dialog = new Dialog(LearningTempat.this);
+        dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+        dialog.getWindow().setBackgroundDrawable(new ColorDrawable(android.graphics.Color.TRANSPARENT));
         dialog.setContentView(R.layout.dialog);
-        TextView tHasilnya = (TextView) dialog.findViewById(R.id.hasilnya);
-        tHasilnya.setText(String.valueOf(hasilnya));
+        TextView t_hasil = (TextView) dialog.findViewById(R.id.result);
+        ImageView img_hasil = (ImageView) dialog.findViewById(R.id.img_res);
+        LinearLayout tutup = (LinearLayout) dialog.findViewById(R.id.close);
+        tutup.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                dialog.dismiss();
+            }
+        });
+        t_hasil.setText(resText);
+        if(hasilnya){
+            img_hasil.setImageResource(R.drawable.benar);
+        }else {
+            img_hasil.setImageResource(R.drawable.salah);
+        }
         dialog.show();
     }
 
@@ -144,6 +158,7 @@ public class LearningTempat extends AppCompatActivity implements View.OnClickLis
                     }else{
                         hasilnya = false;
                     }
+                    resText = hasil.get(0);
                     tampilDialog();
                 }
                 break;
@@ -174,7 +189,7 @@ public class LearningTempat extends AppCompatActivity implements View.OnClickLis
     public void onClick(View view) {
         switch (view.getId()){
             case R.id.next:
-                if(idx == 6){
+                if(idx == 5){
                     idx = 0;
                 }else{
                     idx++;
@@ -184,7 +199,7 @@ public class LearningTempat extends AppCompatActivity implements View.OnClickLis
                 break;
             case R.id.prev:
                 if(idx == 0){
-                    idx = 6;
+                    idx = 5;
                 }else {
                     idx--;
                 }

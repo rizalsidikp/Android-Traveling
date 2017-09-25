@@ -1,7 +1,11 @@
 package app.magis.meinreisen;
 
+import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
+import android.media.MediaPlayer;
 import android.os.Bundle;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
@@ -37,6 +41,22 @@ public class QuizReading extends AppCompatActivity implements View.OnClickListen
             "5. Im Urlaub (...1...) meine Familie und ich nach Brunei. Wir (...2...) mit dem Fluzeug, Da besuchen wir meiner Oma. Wir reisen dann zusammen nach Malaysia und Indonesien."
     };
 
+    MediaPlayer sound;
+
+    protected void playSound(Boolean status){
+        if(sound != null){
+            sound.stop();
+        }
+        if(status){
+            sound = MediaPlayer.create(QuizReading.this, R.raw.correct);
+            sound.start();
+        }else{
+            sound = MediaPlayer.create(QuizReading.this, R.raw.incorrect);
+            sound.start();
+        }
+
+    }
+
     public void setpStory() {
         story.setText(pStory[index]);
         esatu.setText("");
@@ -45,6 +65,7 @@ public class QuizReading extends AppCompatActivity implements View.OnClickListen
     }
 
     protected void salah(){
+        playSound(false);
         if (kesempatan == 1){
             satu.setVisibility(View.INVISIBLE);
         }else if (kesempatan == 2){
@@ -61,6 +82,7 @@ public class QuizReading extends AppCompatActivity implements View.OnClickListen
     }
 
     protected void benar(){
+        playSound(true);
         if(index == 4){
             Intent i = new Intent(QuizReading.this, QuizSpeaking.class);
             i.putExtra("kesempatan", kesempatan);
@@ -104,5 +126,30 @@ public class QuizReading extends AppCompatActivity implements View.OnClickListen
     @Override
     public void onClick(View view) {
         cek_jawaban();
+    }
+
+    public void onBackPressed() {
+        Context c= this;
+        AlertDialog.Builder alert = new AlertDialog.Builder(c);
+        alert.setMessage("Quiz beenden? Wirklich?");
+        alert.setCancelable(false);
+        alert.setPositiveButton("Ja", new DialogInterface.OnClickListener() {
+
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                finish();
+
+            }
+        });
+
+        alert.setNegativeButton("Nein", new DialogInterface.OnClickListener() {
+
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                dialog.cancel();
+
+            }
+        });
+        alert.show();
     }
 }

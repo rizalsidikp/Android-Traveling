@@ -99,7 +99,7 @@
                     android:layout_height="0dp"
                     android:layout_weight="1"
                     android:orientation="vertical"
-                    android:background="#A5E6FC">
+                    android:background="@color/tulisan">
 
                     <TextView
                         android:id="@+id/text_tampil"

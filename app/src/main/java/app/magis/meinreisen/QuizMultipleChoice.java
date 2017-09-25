@@ -1,7 +1,11 @@
 package app.magis.meinreisen;
 
+import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
+import android.media.MediaPlayer;
 import android.os.Bundle;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
@@ -10,7 +14,7 @@ import android.widget.ImageView;
 public class QuizMultipleChoice extends AppCompatActivity implements View.OnClickListener {
 
     int index = 0, kesempatan = 1;
-    ImageView satu, dua, tiga;
+    ImageView satu, dua, tiga, gambar;
     Button a,b,c,d;
 
     String[] answer = {
@@ -29,6 +33,22 @@ public class QuizMultipleChoice extends AppCompatActivity implements View.OnClic
             {"die U-Bahn","der Zug","der Bahnhof","das Flugzeug"}
     };
 
+    MediaPlayer sound;
+
+    protected void playSound(Boolean status){
+        if(sound != null){
+            sound.stop();
+        }
+        if(status){
+            sound = MediaPlayer.create(QuizMultipleChoice.this, R.raw.correct);
+            sound.start();
+        }else{
+            sound = MediaPlayer.create(QuizMultipleChoice.this, R.raw.incorrect);
+            sound.start();
+        }
+
+    }
+
     protected void setChoice(){
         a.setText(choice[index][0]);
         b.setText(choice[index][1]);
@@ -36,7 +56,30 @@ public class QuizMultipleChoice extends AppCompatActivity implements View.OnClic
         d.setText(choice[index][3]);
     }
 
+    protected void setImage() {
+        switch (index){
+            case 0:
+                gambar.setImageResource(R.drawable.bicycle);
+                break;
+            case 1:
+                gambar.setImageResource(R.drawable.todrive);
+                break;
+            case 2:
+                gambar.setImageResource(R.drawable.city);
+                break;
+            case 3:
+                gambar.setImageResource(R.drawable.atasnya);
+                break;
+            case 4:
+                gambar.setImageResource(R.drawable.atasnya);
+                break;
+            default:
+                break;
+        }
+    }
+
     protected void salah(){
+        playSound(false);
         if (kesempatan == 1){
             satu.setVisibility(View.INVISIBLE);
         }else if (kesempatan == 2){
@@ -53,6 +96,7 @@ public class QuizMultipleChoice extends AppCompatActivity implements View.OnClic
     }
 
     protected void benar(){
+        playSound(true);
         if(index == 4){
             Intent i = new Intent(QuizMultipleChoice.this, QuizResult.class);
             i.putExtra("hasilQuiz", true);
@@ -62,6 +106,7 @@ public class QuizMultipleChoice extends AppCompatActivity implements View.OnClic
         }else{
             index++;
             setChoice();
+            setImage();
         }
     }
 
@@ -84,14 +129,16 @@ public class QuizMultipleChoice extends AppCompatActivity implements View.OnClic
         tiga = (ImageView) findViewById(R.id.k_three);
 
         a = (Button) findViewById(R.id.a);
-        b = (Button) findViewById(R.id.d);
+        b = (Button) findViewById(R.id.b);
         c = (Button) findViewById(R.id.c);
-        d = (Button) findViewById(R.id.b);
+        d = (Button) findViewById(R.id.d);
 
         a.setOnClickListener(this);
         b.setOnClickListener(this);
         c.setOnClickListener(this);
         d.setOnClickListener(this);
+
+        gambar = (ImageView) findViewById(R.id.img_q);
 
         Intent i = getIntent();
         kesempatan = i.getIntExtra("kesempatan", 1);
@@ -103,7 +150,7 @@ public class QuizMultipleChoice extends AppCompatActivity implements View.OnClic
         }
 
         setChoice();
-
+        setImage();
     }
 
     @Override
@@ -125,5 +172,30 @@ public class QuizMultipleChoice extends AppCompatActivity implements View.OnClic
                 break;
         }
 
+    }
+
+    public void onBackPressed() {
+        Context c= this;
+        AlertDialog.Builder alert = new AlertDialog.Builder(c);
+        alert.setMessage("Quiz beenden? Wirklich?");
+        alert.setCancelable(false);
+        alert.setPositiveButton("Ja", new DialogInterface.OnClickListener() {
+
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                finish();
+
+            }
+        });
+
+        alert.setNegativeButton("Nein", new DialogInterface.OnClickListener() {
+
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                dialog.cancel();
+
+            }
+        });
+        alert.show();
     }
 }

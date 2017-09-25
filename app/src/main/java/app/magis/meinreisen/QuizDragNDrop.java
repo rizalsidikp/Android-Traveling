@@ -1,8 +1,12 @@
 package app.magis.meinreisen;
 
 import android.content.ClipData;
+import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
+import android.media.MediaPlayer;
 import android.os.Bundle;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.view.DragEvent;
 import android.view.MotionEvent;
@@ -15,7 +19,7 @@ import android.widget.TextView;
 public class QuizDragNDrop extends AppCompatActivity implements View.OnClickListener {
     TextView answerOne, answerTwo, chooseOne, chooseTwo, chooseThree, chooseFour, result;
     Button submit;
-    ImageView satu, dua, tiga;
+    ImageView satu, dua, tiga, gambar;
     int kesempatan = 1, index = 0;
 
     String[][] answer = {
@@ -34,6 +38,22 @@ public class QuizDragNDrop extends AppCompatActivity implements View.OnClickList
             {"das","der","Bahnhof","U-Bahn"}
     };
 
+    MediaPlayer sound;
+
+    protected void playSound(Boolean status){
+        if(sound != null){
+            sound.stop();
+        }
+        if(status){
+            sound = MediaPlayer.create(QuizDragNDrop.this, R.raw.correct);
+            sound.start();
+        }else{
+            sound = MediaPlayer.create(QuizDragNDrop.this, R.raw.incorrect);
+            sound.start();
+        }
+
+    }
+
     protected void setChoice(){
         answerOne.setText("-");
         answerTwo.setText("-");
@@ -43,7 +63,30 @@ public class QuizDragNDrop extends AppCompatActivity implements View.OnClickList
         chooseFour.setText(pilihan[index][3]);
     }
 
+    protected void setImage() {
+        switch (index){
+            case 0:
+                gambar.setImageResource(R.drawable.boat);
+                break;
+            case 1:
+                gambar.setImageResource(R.drawable.train);
+                break;
+            case 2:
+                gambar.setImageResource(R.drawable.atasnya);
+                break;
+            case 3:
+                gambar.setImageResource(R.drawable.city);
+                break;
+            case 4:
+                gambar.setImageResource(R.drawable.train_station);
+                break;
+            default:
+                break;
+        }
+    }
+
     protected void salah(){
+        playSound(false);
         if (kesempatan == 1){
             satu.setVisibility(View.INVISIBLE);
         }else if (kesempatan == 2){
@@ -60,6 +103,7 @@ public class QuizDragNDrop extends AppCompatActivity implements View.OnClickList
     }
 
     protected void benar(){
+        playSound(true);
         if(index == 4){
             Intent i = new Intent(QuizDragNDrop.this, QuizListening.class);
             i.putExtra("kesempatan", kesempatan);
@@ -68,6 +112,7 @@ public class QuizDragNDrop extends AppCompatActivity implements View.OnClickList
         }else{
             index++;
             setChoice();
+            setImage();
         }
     }
 
@@ -94,6 +139,7 @@ public class QuizDragNDrop extends AppCompatActivity implements View.OnClickList
         chooseFour = (TextView) findViewById(R.id.choose_four);
         result = (TextView) findViewById(R.id.result);
         submit = (Button) findViewById(R.id.submit);
+        gambar = (ImageView) findViewById(R.id.img_q);
 
 
         answerOne.setOnTouchListener(new WordDragListener());
@@ -116,6 +162,7 @@ public class QuizDragNDrop extends AppCompatActivity implements View.OnClickList
 
         submit.setOnClickListener(this);
         setChoice();
+        setImage();
     }
 
     @Override
@@ -166,5 +213,30 @@ public class QuizDragNDrop extends AppCompatActivity implements View.OnClickList
             }
             return true;
         }
+    }
+
+    public void onBackPressed() {
+        Context c= this;
+        AlertDialog.Builder alert = new AlertDialog.Builder(c);
+        alert.setMessage("Quiz beenden? Wirklich?");
+        alert.setCancelable(false);
+        alert.setPositiveButton("Ja", new DialogInterface.OnClickListener() {
+
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                finish();
+
+            }
+        });
+
+        alert.setNegativeButton("Nein", new DialogInterface.OnClickListener() {
+
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                dialog.cancel();
+
+            }
+        });
+        alert.show();
     }
 }

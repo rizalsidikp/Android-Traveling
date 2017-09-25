@@ -6,7 +6,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        android:background="#eee">
+        android:background="@drawable/langit">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -67,27 +67,14 @@
                 android:layout_weight="10"
                 android:orientation="vertical">
 
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="0dp"
-                    android:layout_weight="5"
-                    android:orientation="vertical"
-                    android:background="@drawable/rounded_corner">
-
-                        <TextView
-                            android:id="@+id/result"
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:gravity="center"/>
-
-                </LinearLayout>
+                <include layout="@layout/gambar_quiz" />
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
                     android:layout_weight="1"
                     android:orientation="vertical"
-                    android:background="#A5E6FC">
+                    android:background="#EDB44F">
 
                     <TextView
                         android:id="@+id/text_tampil"
@@ -96,6 +83,12 @@
                         android:gravity="center"/>
 
                 </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="0.2"
+                    android:orientation="vertical"></LinearLayout>
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -112,7 +105,12 @@
                             android:id="@+id/true_option"
                             android:layout_width="wrap_content"
                             android:layout_height="match_parent"
-                            android:text="true"
+                            android:text="richtig"
+                            android:textAllCaps="false"
+                            android:backgroundTint="@color/buttonColor"
+                            android:textSize="16sp"
+                            android:textStyle="bold"
+                            android:textColor="@color/buttonText"
                             android:layout_gravity="end"/>
 
                     </LinearLayout>
@@ -126,7 +124,12 @@
                             android:id="@+id/false_option"
                             android:layout_width="wrap_content"
                             android:layout_height="match_parent"
-                            android:text="false"
+                            android:text="falsch"
+                            android:textAllCaps="false"
+                            android:backgroundTint="@color/buttonColor"
+                            android:textSize="16sp"
+                            android:textStyle="bold"
+                            android:textColor="@color/buttonText"
                             android:layout_gravity="start"/>
 
                     </LinearLayout>
@@ -145,7 +148,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_weight="1"
+            android:layout_weight="0.5"
             android:orientation="vertical"></LinearLayout>
     </LinearLayout>
 

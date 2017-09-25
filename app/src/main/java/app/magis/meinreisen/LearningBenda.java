@@ -3,13 +3,16 @@ package app.magis.meinreisen;
 import android.app.Dialog;
 import android.content.ActivityNotFoundException;
 import android.content.Intent;
+import android.graphics.drawable.ColorDrawable;
 import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.speech.RecognizerIntent;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.view.Window;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -22,6 +25,7 @@ public class LearningBenda extends AppCompatActivity implements View.OnClickList
     int idx = 0;
     TextView textTampil;
     Boolean hasilnya = false;
+    String resText;
     ImageView gambar, next, prev, play, speak;
     String[] kataKerja = {
             "das Motorrad",
@@ -43,13 +47,13 @@ public class LearningBenda extends AppCompatActivity implements View.OnClickList
                 gambar.setImageResource(R.drawable.motorcycle);
                 break;
             case 1:
-                gambar.setImageResource(R.drawable.atasnya);
+                gambar.setImageResource(R.drawable.boat);
                 break;
             case 2:
                 gambar.setImageResource(R.drawable.bicycle);
                 break;
             case 3:
-                gambar.setImageResource(R.drawable.atasnya);
+                gambar.setImageResource(R.drawable.train);
                 break;
             case 4:
                 gambar.setImageResource(R.drawable.pesawat);
@@ -105,9 +109,24 @@ public class LearningBenda extends AppCompatActivity implements View.OnClickList
 
     private void tampilDialog(){
         final Dialog dialog = new Dialog(LearningBenda.this);
+        dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+        dialog.getWindow().setBackgroundDrawable(new ColorDrawable(android.graphics.Color.TRANSPARENT));
         dialog.setContentView(R.layout.dialog);
-        TextView tHasilnya = (TextView) dialog.findViewById(R.id.hasilnya);
-        tHasilnya.setText(String.valueOf(hasilnya));
+        TextView t_hasil = (TextView) dialog.findViewById(R.id.result);
+        ImageView img_hasil = (ImageView) dialog.findViewById(R.id.img_res);
+        LinearLayout tutup = (LinearLayout) dialog.findViewById(R.id.close);
+        tutup.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                dialog.dismiss();
+            }
+        });
+        t_hasil.setText(resText);
+        if(hasilnya){
+            img_hasil.setImageResource(R.drawable.benar);
+        }else {
+            img_hasil.setImageResource(R.drawable.salah);
+        }
         dialog.show();
     }
 
@@ -144,6 +163,7 @@ public class LearningBenda extends AppCompatActivity implements View.OnClickList
                     }else{
                         hasilnya = false;
                     }
+                    resText = hasil.get(0);
                     tampilDialog();
                 }
                 break;

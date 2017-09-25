@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">MeinReisen</string>
     <string name="tidaksupport">Your Device is not Supperted</string>
+    <string name="submit">einreichen</string>
 </resources>

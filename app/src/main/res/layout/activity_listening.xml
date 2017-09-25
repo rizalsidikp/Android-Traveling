@@ -6,7 +6,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        android:background="#eee">
+        android:background="@drawable/langit">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -120,7 +120,7 @@
                                 android:id="@+id/ksatu"
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent"
-                                android:src="@drawable/atas"
+                                android:src="@drawable/star"
                                 android:layout_gravity="end"/>
                         </LinearLayout>
                         <LinearLayout
@@ -131,7 +131,7 @@
                                 android:id="@+id/kdua"
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent"
-                                android:src="@drawable/atas"/>
+                                android:src="@drawable/star"/>
                         </LinearLayout>
                         <LinearLayout
                             android:layout_width="0dp"
@@ -141,7 +141,7 @@
                                 android:id="@+id/ktiga"
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent"
-                                android:src="@drawable/atas"/>
+                                android:src="@drawable/star"/>
                         </LinearLayout>
                         <LinearLayout
                             android:layout_width="0dp"
@@ -157,7 +157,7 @@
                     android:layout_height="0dp"
                     android:layout_weight="1"
                     android:orientation="vertical"
-                    android:background="#A5E6FC">
+                    android:background="@color/tulisan">
 
                     <EditText
                         android:id="@+id/answer"
@@ -171,13 +171,24 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
+                    android:layout_weight="0.2"
+                    android:orientation="vertical"></LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
                     android:layout_weight="1"
                     android:orientation="vertical">
                     <Button
                         android:id="@+id/submit"
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
-                        android:text="submit"
+                        android:text="@string/submit"
+                        android:textAllCaps="false"
+                        android:backgroundTint="@color/buttonColor"
+                        android:textColor="@color/buttonText"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
                         android:layout_gravity="center"/>
                 </LinearLayout>
 
@@ -194,7 +205,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_weight="1"
+            android:layout_weight="0.5"
             android:orientation="vertical"></LinearLayout>
     </LinearLayout>
 

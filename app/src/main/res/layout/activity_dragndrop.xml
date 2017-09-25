@@ -6,7 +6,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        android:background="#eee">
+        android:background="@drawable/langit">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -77,12 +77,34 @@
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="0dp"
-                        android:layout_weight="8">
-                        <TextView
-                            android:id="@+id/result"
-                            android:layout_width="match_parent"
+                        android:orientation="horizontal"
+                        android:layout_weight="12">
+
+                        <LinearLayout
+                            android:layout_width="0dp"
                             android:layout_height="match_parent"
-                            android:gravity="center"/>
+                            android:layout_weight="1">
+
+                        </LinearLayout>
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="10">
+
+                            <ImageView
+                                android:id="@+id/img_q"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:gravity="center"/>
+
+                        </LinearLayout>
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1">
+
+                        </LinearLayout>
+
                     </LinearLayout>
 
                     <LinearLayout
@@ -94,31 +116,44 @@
                         <TextView
                             android:id="@+id/word_one"
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
+                            android:layout_height="match_parent"
                             android:layout_gravity="center"
                             android:layout_weight="1"
                             android:background="#EEE"
                             android:text="-"
-                            android:textSize="20sp"
+                            android:textStyle="bold"
                             android:gravity="center"
                             android:layout_margin="5dp"
+                            android:backgroundTint="@color/tulisan"
                             />
 
                         <TextView
                             android:id="@+id/word_two"
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
+                            android:layout_height="match_parent"
                             android:layout_gravity="center"
                             android:layout_weight="1"
                             android:background="#EEE"
                             android:text="-"
-                            android:textSize="20sp"
+                            android:textStyle="bold"
                             android:gravity="center"
-                            android:layout_margin="5dp"/>
+                            android:layout_margin="5dp"
+                            android:backgroundTint="@color/tulisan"/>
 
                     </LinearLayout>
 
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="0.5"></LinearLayout>
+
                 </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="0.2"
+                    android:orientation="vertical"></LinearLayout>
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -129,24 +164,22 @@
                     <TextView
                         android:id="@+id/choose_one"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
+                        android:layout_height="match_parent"
                         android:layout_gravity="center"
                         android:layout_weight="1"
                         android:background="#FFF"
                         android:text="satu"
-                        android:textSize="20sp"
                         android:gravity="center"
                         android:layout_margin="5dp"/>
 
                     <TextView
                         android:id="@+id/choose_two"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
+                        android:layout_height="match_parent"
                         android:layout_gravity="center"
                         android:layout_weight="1"
                         android:background="#FFF"
                         android:text="dua"
-                        android:textSize="20sp"
                         android:gravity="center"
                         android:layout_margin="5dp"/>
 
@@ -161,24 +194,22 @@
                     <TextView
                         android:id="@+id/choose_three"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
+                        android:layout_height="match_parent"
                         android:layout_gravity="center"
                         android:layout_weight="1"
                         android:background="#FFF"
                         android:text="tiga"
-                        android:textSize="20sp"
                         android:gravity="center"
                         android:layout_margin="5dp"/>
 
                     <TextView
                         android:id="@+id/choose_four"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
+                        android:layout_height="match_parent"
                         android:layout_gravity="center"
                         android:layout_weight="1"
                         android:background="#FFF"
                         android:text="empat"
-                        android:textSize="20sp"
                         android:gravity="center"
                         android:layout_margin="5dp"/>
 
@@ -195,7 +226,12 @@
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
                         android:layout_gravity="center"
-                        android:text="submit"/>
+                        android:textAllCaps="false"
+                        android:textColor="@color/buttonText"
+                        android:backgroundTint="@color/buttonColor"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        android:text="@string/submit"/>
 
                 </LinearLayout>
 
@@ -212,7 +248,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_weight="1"
+            android:layout_weight="0.5"
             android:orientation="vertical"></LinearLayout>
     </LinearLayout>
 
