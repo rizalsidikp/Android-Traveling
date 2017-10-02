@@ -58,7 +58,7 @@ public class QuizTrueFalse extends AppCompatActivity implements View.OnClickList
                 gambar.setImageResource(R.drawable.motorcycle);
                 break;
             case 1:
-                gambar.setImageResource(R.drawable.atasnya);
+                gambar.setImageResource(R.drawable.towalk);
                 break;
             case 2:
                 gambar.setImageResource(R.drawable.holiday);

@@ -42,12 +42,16 @@ public class QuizResult extends AppCompatActivity {
         Intent i = getIntent();
         Boolean hasil = i.getBooleanExtra("hasilQuiz", true);
         if(hasil){
-            bg.setBackgroundColor(getResources().getColor(R.color.success));
-            gambar.setImageResource(R.drawable.success);
             int level = i.getIntExtra("level", 0);
-            Connector con = new Connector(this);
-            con.open_level(level);
-            con.close();
+            if(level == 4){
+                bg.setBackground(getResources().getDrawable(R.drawable.juara));
+            }else if(level == 2 || level == 3){
+                bg.setBackgroundColor(getResources().getColor(R.color.success));
+                gambar.setImageResource(R.drawable.success);
+                Connector con = new Connector(this);
+                con.open_level(level);
+                con.close();
+            }
         }else {
             bg.setBackgroundColor(getResources().getColor(R.color.fail));
             gambar.setImageResource(R.drawable.fail);

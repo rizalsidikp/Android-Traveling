@@ -21,7 +21,7 @@ public class QuizMultipleChoice extends AppCompatActivity implements View.OnClic
             "das Fahrrad",
             "fahren",
             "die Stadt",
-            "kommen",
+            "laufen",
             "die U-Bahn"
     };
 
@@ -29,7 +29,7 @@ public class QuizMultipleChoice extends AppCompatActivity implements View.OnClic
             {"das Motorrad","die Straße","das Fahrrad","das Auto"},
             {"fahren","das Auto","der Bus","der Weg"},
             {"das Land","die Straße","der Urlaub","die Stadt"},
-            {"gehen","kommen","rennen","laufen"},
+            {"gehen","laufen","rennen","kommen"},
             {"die U-Bahn","der Zug","der Bahnhof","das Flugzeug"}
     };
 
@@ -68,7 +68,7 @@ public class QuizMultipleChoice extends AppCompatActivity implements View.OnClic
                 gambar.setImageResource(R.drawable.city);
                 break;
             case 3:
-                gambar.setImageResource(R.drawable.atasnya);
+                gambar.setImageResource(R.drawable.towalk);
                 break;
             case 4:
                 gambar.setImageResource(R.drawable.underground_train);

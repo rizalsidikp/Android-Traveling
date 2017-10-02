@@ -8,7 +8,7 @@ import android.widget.LinearLayout;
 
 public class Home extends AppCompatActivity implements View.OnClickListener {
 
-    LinearLayout learning, story, quiz;
+    LinearLayout learning, story, quiz, uber;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -18,9 +18,11 @@ public class Home extends AppCompatActivity implements View.OnClickListener {
         learning = (LinearLayout) findViewById(R.id.learning);
         story = (LinearLayout) findViewById(R.id.story);
         quiz = (LinearLayout) findViewById(R.id.quiz);
+        uber = (LinearLayout) findViewById(R.id.uber);
         learning.setOnClickListener(this);
         story.setOnClickListener(this);
         quiz.setOnClickListener(this);
+        uber.setOnClickListener(this);
 
     }
 
@@ -38,6 +40,10 @@ public class Home extends AppCompatActivity implements View.OnClickListener {
                 break;
             case R.id.quiz:
                 i = new Intent(Home.this, QuizMenu.class);
+                startActivity(i);
+                break;
+            case R.id.uber:
+                i = new Intent(Home.this, UberUns.class);
                 startActivity(i);
                 break;
             default:

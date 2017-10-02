@@ -22,9 +22,6 @@ import android.widget.Toast;
 
 import java.util.ArrayList;
 
-/**
- * Created by rizalsidikp on 22/09/17.
- */
 
 public class QuizSpeaking extends AppCompatActivity implements View.OnClickListener {
 
@@ -148,8 +145,9 @@ public class QuizSpeaking extends AppCompatActivity implements View.OnClickListe
             @Override
             public void run() {
                 if(index == 4){
-                    Intent i = new Intent(QuizSpeaking.this, QuizMultipleChoice.class);
-                    i.putExtra("kesempatan", kesempatan);
+                    Intent i = new Intent(QuizSpeaking.this, QuizResult.class);
+                    i.putExtra("hasilQuiz", true);
+                    i.putExtra("level", 4);
                     startActivity(i);
                     finish();
                 }else{

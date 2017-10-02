@@ -25,11 +25,11 @@ public class LearningStory extends AppCompatActivity implements View.OnClickList
     };
 
     String[] story_tampil = {
-            "Thomas reist von den Niederlanden nach Deutschland. Er fährt mit dem Zug. Im Progamm besucht er Berlin. Er macht dort einen Spaziergang durch das Riegierungsviertel. Thomas will das Parlament besictigen, ϋber einen Flohmarkt bummeln. Am Abend will er auch ins Theater gehen.",
+            "Thomas reist von den Niederlanden nach Deutschland. Er fährt mit dem Zug. Er besucht Berlin. Er macht dort einen Spaziergang durch das Riegierungsviertel. Thomas will das Parlament besictigen und über einen Flohmarkt bummeln. Am Abend will er auch ins Theater gehen.",
             "Ich fahren mit meinen Freunden nach Berlin. Wir fahren mit dem Auto zum Brandenburger Tor. Wir sind sehr aufgeregt. Denn es ist unser erstes Mal in Berlin.",
-            "Am 30.Februar machen wir eine Fahrt nach Rom. Wir fahren mit dem Zug um 11.30 Uhr ab. Wir sind um 15.00 Uhr am Hotel in Rom.",
-            "Marlene geht oft zum Hauptbahnhof. Denn sie arbeitet als Kartenverkäuferin am Bahnhof. Sie arbeitet da seit 4 Jahren.",
-            "Im Urlaub reisen meine Familie und ich nach Brunei. Wir fliegen mit dem Fluzeug, Da besuchen wir meiner Oma. Wir reisen dann zusammen nach Malaysia und Indonesien."
+            "Am 30 Januar machen wir eine Fahrt nach Rom. Wir fahren mit dem Zug um 11.30 Uhr ab. Wir sind um 15.00 Uhr am Hotel in Rom.",
+            "Marlene geht oft zum Hauptbahnhof. Denn sie arbeitet als Fahrkartenverkäuferin am Bahnhof. Sie arbeitet da seit 4 Jahren.",
+            "Im Urlaub reisen meine Familie und ich nach Brunei. Wir fliegen mit dem Fluzeug, Da besuchen wir meiner Oma. Wir reisen dann zusammen nach Malaysien und Indonesien."
     };
 
     protected void setStroyKe(){

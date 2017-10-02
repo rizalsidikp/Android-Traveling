@@ -13,9 +13,7 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-/**
- * Created by rizalsidikp on 18/09/17.
- */
+
 
 public class QuizReading extends AppCompatActivity implements View.OnClickListener {
 
@@ -34,11 +32,11 @@ public class QuizReading extends AppCompatActivity implements View.OnClickListen
     };
 
     String[] pStory = {
-            "Thomas (...1...) von den Niederlanden nach Deutschland. Er fährt mit dem Zug. Im Progamm besucht er Berlin. Er macht dort einen Spaziergang durch das Riegierungsviertel. Thomas will das Parlament besictigen, ϋber einen Flohmarkt bummeln. Am Abend will er auch ins Theater (...2...).",
+            "Thomas (...1...) von den Niederlanden nach Deutschland. Er fährt mit dem Zug. Er besucht Berlin. Er macht dort einen Spaziergang durch das Riegierungsviertel. Thomas will das Parlament besictigen und über einen Flohmarkt bummeln. Am Abend will er auch ins Theater (...2...).",
             "Ich (...1...) mit meinen Freunden nach Berlin. Wir fahren mit dem (...2...) zum Brandenburger Tor. Wir sind sehr aufgeregt. Denn es ist unser erstes Mal in Berlin.",
-            "Am 30.Februar machen wir eine (...1...) nach Rom. Wir fahren mit dem (...2...) um 11.30 Uhr ab. Wir sind um 15.00 Uhr am Hotel in Rom.",
-            "Marlene (...1...) oft zum Hauptbahnhof. Denn sie arbeitet als Kartenverkäuferin am (...2...). Sie arbeitet da seit 4 Jahren.",
-            "5. Im Urlaub (...1...) meine Familie und ich nach Brunei. Wir (...2...) mit dem Fluzeug, Da besuchen wir meiner Oma. Wir reisen dann zusammen nach Malaysia und Indonesien."
+            "Am 30 Januar machen wir eine (...1...) nach Rom. Wir fahren mit dem (...2...) um 11.30 Uhr ab. Wir sind um 15.00 Uhr am Hotel in Rom.",
+            "Marlene (...1...) oft zum Hauptbahnhof. Denn sie arbeitet als Fahrkartenverkäuferin am (...2...). Sie arbeitet da seit 4 Jahren.",
+            "Im Urlaub (...1...) meine Familie und ich nach Brunei. Wir (...2...) mit dem Fluzeug, Da besuchen wir meiner Oma. Wir reisen dann zusammen nach Malaysien und Indonesien."
     };
 
     MediaPlayer sound;

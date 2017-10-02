@@ -5,9 +5,7 @@ import android.content.Context;
 import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
 
-/**
- * Created by rizalsidikp on 18/09/17.
- */
+
 
 public class Connector {
     private static final String DB_NAME = "meinreisen.db";
