@@ -14,7 +14,7 @@ public class LearningStory extends AppCompatActivity implements View.OnClickList
 
     MediaPlayer sound;
     int idx = 0;
-    ImageView next, prev, play;
+    ImageView next, prev, play, gambar;
     TextView storyTampil, storyKe;
     String[] story_ke = {
             "Geschichte 1",
@@ -26,7 +26,7 @@ public class LearningStory extends AppCompatActivity implements View.OnClickList
 
     String[] story_tampil = {
             "Thomas reist von den Niederlanden nach Deutschland. Er fährt mit dem Zug. Er besucht Berlin. Er macht dort einen Spaziergang durch das Riegierungsviertel. Thomas will das Parlament besictigen und über einen Flohmarkt bummeln. Am Abend will er auch ins Theater gehen.",
-            "Ich fahren mit meinen Freunden nach Berlin. Wir fahren mit dem Auto zum Brandenburger Tor. Wir sind sehr aufgeregt. Denn es ist unser erstes Mal in Berlin.",
+            "Ich fahre mit meinen Freunden nach Berlin. Wir fahren mit dem Auto zum Brandenburger Tor. Wir sind sehr aufgeregt. Denn es ist unsere erstes Mal in Berlin.",
             "Am 30 Januar machen wir eine Fahrt nach Rom. Wir fahren mit dem Zug um 11.30 Uhr ab. Wir sind um 15.00 Uhr am Hotel in Rom.",
             "Marlene geht oft zum Hauptbahnhof. Denn sie arbeitet als Fahrkartenverkäuferin am Bahnhof. Sie arbeitet da seit 4 Jahren.",
             "Im Urlaub reisen meine Familie und ich nach Brunei. Wir fliegen mit dem Fluzeug, Da besuchen wir meiner Oma. Wir reisen dann zusammen nach Malaysien und Indonesien."
@@ -37,6 +37,22 @@ public class LearningStory extends AppCompatActivity implements View.OnClickList
     }
     protected void setStroyTampil(){
         storyTampil.setText(story_tampil[idx]);
+    }
+
+    protected void setGambar(){
+        switch (idx){
+            case 0:
+            case 1:
+                gambar.setImageResource(R.drawable.talk);
+                break;
+            case 2:
+            case 3:
+            case 4:
+                gambar.setImageResource(R.drawable.talk_two);
+                break;
+            default:
+                break;
+        }
     }
 
     protected void playSound(){
@@ -78,8 +94,11 @@ public class LearningStory extends AppCompatActivity implements View.OnClickList
         next = (ImageView) findViewById(R.id.next);
         prev = (ImageView) findViewById(R.id.prev);
         play = (ImageView) findViewById(R.id.play);
+        gambar = (ImageView) findViewById(R.id.gambar_story);
         setStroyKe();
         setStroyTampil();
+        setGambar();
+
 
         next.setOnClickListener(this);
         prev.setOnClickListener(this);
@@ -100,6 +119,7 @@ public class LearningStory extends AppCompatActivity implements View.OnClickList
                 }
                 setStroyKe();
                 setStroyTampil();
+                setGambar();
                 break;
             case R.id.prev:
                 if(idx == 0){
@@ -112,6 +132,7 @@ public class LearningStory extends AppCompatActivity implements View.OnClickList
                 }
                 setStroyKe();
                 setStroyTampil();
+                setGambar();
                 break;
             case R.id.play:
                 playSound();

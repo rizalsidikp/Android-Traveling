@@ -10,7 +10,6 @@ import android.speech.RecognizerIntent;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.view.Window;
-import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -30,7 +29,9 @@ public class LearningKerja extends AppCompatActivity implements View.OnClickList
             "fahren",
             "fliegen",
             "rennen",
-            "laufen"
+            "laufen",
+            "gehen",
+            "kommen"
     };
     String resText;
 
@@ -51,6 +52,12 @@ public class LearningKerja extends AppCompatActivity implements View.OnClickList
                 break;
             case 3:
                 gambar.setImageResource(R.drawable.towalk);
+                break;
+            case 4:
+                gambar.setImageResource(R.drawable.to_go);
+                break;
+            case 5:
+                gambar.setImageResource(R.drawable.to_come);
                 break;
             default:
                 break;
@@ -77,6 +84,14 @@ public class LearningKerja extends AppCompatActivity implements View.OnClickList
                 break;
             case 3:
                 sound = MediaPlayer.create(LearningKerja.this, R.raw.laufen);
+                sound.start();
+                break;
+            case 4:
+                sound = MediaPlayer.create(LearningKerja.this, R.raw.gehen);
+                sound.start();
+                break;
+            case 5:
+                sound = MediaPlayer.create(LearningKerja.this, R.raw.kommen);
                 sound.start();
                 break;
             default:
@@ -171,7 +186,7 @@ public class LearningKerja extends AppCompatActivity implements View.OnClickList
     public void onClick(View view) {
         switch (view.getId()){
             case R.id.next:
-                if(idx == 3){
+                if(idx == 5){
                     idx = 0;
                 }else{
                     idx++;
@@ -181,7 +196,7 @@ public class LearningKerja extends AppCompatActivity implements View.OnClickList
                 break;
             case R.id.prev:
                 if(idx == 0){
-                    idx = 3;
+                    idx = 5;
                 }else {
                     idx--;
                 }

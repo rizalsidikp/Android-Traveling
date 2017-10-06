@@ -25,7 +25,7 @@ public class QuizReading extends AppCompatActivity implements View.OnClickListen
 
     String[][] answer = {
             {"reist","gehen"},
-            {"fahren","Auto"},
+            {"fahre","Auto"},
             {"Fahrt","Zug"},
             {"geht","Bahnhof"},
             {"reisen","fliegen"}
@@ -33,7 +33,7 @@ public class QuizReading extends AppCompatActivity implements View.OnClickListen
 
     String[] pStory = {
             "Thomas (...1...) von den Niederlanden nach Deutschland. Er fährt mit dem Zug. Er besucht Berlin. Er macht dort einen Spaziergang durch das Riegierungsviertel. Thomas will das Parlament besictigen und über einen Flohmarkt bummeln. Am Abend will er auch ins Theater (...2...).",
-            "Ich (...1...) mit meinen Freunden nach Berlin. Wir fahren mit dem (...2...) zum Brandenburger Tor. Wir sind sehr aufgeregt. Denn es ist unser erstes Mal in Berlin.",
+            "Ich (...1...) mit meinen Freunden nach Berlin. Wir fahren mit dem (...2...) zum Brandenburger Tor. Wir sind sehr aufgeregt. Denn es ist unsere erstes Mal in Berlin.",
             "Am 30 Januar machen wir eine (...1...) nach Rom. Wir fahren mit dem (...2...) um 11.30 Uhr ab. Wir sind um 15.00 Uhr am Hotel in Rom.",
             "Marlene (...1...) oft zum Hauptbahnhof. Denn sie arbeitet als Fahrkartenverkäuferin am (...2...). Sie arbeitet da seit 4 Jahren.",
             "Im Urlaub (...1...) meine Familie und ich nach Brunei. Wir (...2...) mit dem Fluzeug, Da besuchen wir meiner Oma. Wir reisen dann zusammen nach Malaysien und Indonesien."

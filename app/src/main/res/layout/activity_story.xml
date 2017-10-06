@@ -35,7 +35,7 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
-                    android:layout_weight="5"
+                    android:layout_weight="4"
                     android:orientation="horizontal"
                     android:background="@drawable/rounded_corner">
                     <LinearLayout
@@ -58,24 +58,21 @@
                         android:layout_height="match_parent"
                         android:layout_weight="7"
                         android:orientation="vertical">
-
-                        <ScrollView
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:layout_gravity="center">
-
-                            <TextView
-                                android:id="@+id/story_tampil"
-                                android:padding="20dp"
+                            <ScrollView
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent"
-                                android:gravity="center"
-                                android:layout_gravity="center"
-                                android:textAlignment="center"/>
+                                android:layout_gravity="center">
 
-                        </ScrollView>
+                                <TextView
+                                    android:id="@+id/story_tampil"
+                                    android:padding="20dp"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:gravity="center"
+                                    android:layout_gravity="center"
+                                    android:textAlignment="center"/>
 
-
+                            </ScrollView>
                     </LinearLayout>
                     <LinearLayout
                         android:layout_width="0dp"
@@ -91,6 +88,18 @@
                             android:src="@drawable/next"/>
 
                     </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1.8"
+                    android:background="#FFF">
+                    <ImageView
+                        android:id="@+id/gambar_story"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:src="@drawable/talk"/>
                 </LinearLayout>
 
                 <LinearLayout
