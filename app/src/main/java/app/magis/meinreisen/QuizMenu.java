@@ -62,6 +62,7 @@ public class QuizMenu extends AppCompatActivity implements View.OnClickListener 
         level_one.setOnClickListener(this);
     }
 
+    @RequiresApi(api = Build.VERSION_CODES.JELLY_BEAN)
     @Override
     protected void onResume(){
         super.onResume();

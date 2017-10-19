@@ -17,11 +17,11 @@ public class LearningStory extends AppCompatActivity implements View.OnClickList
     ImageView next, prev, play, gambar;
     TextView storyTampil, storyKe;
     String[] story_ke = {
-            "Geschichte 1",
-            "Geschichte 2",
-            "Geschichte 3",
-            "Geschichte 4",
-            "Geschichte 5"
+            "Reisen mit Thomas",
+            "Brandenburger Tor",
+            "Fahrt nach Rom",
+            "Marlene, Fahrkartenverkäuferin",
+            "Urlaub"
     };
 
     String[] story_tampil = {

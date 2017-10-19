@@ -27,7 +27,7 @@ public class QuizMultipleChoice extends AppCompatActivity implements View.OnClic
 
     String[][] choice = {
             {"das Motorrad","die Straße","das Fahrrad","das Auto"},
-            {"fahren","das Auto","der Bus","der Weg"},
+            {"fahren","das Flugzeug","der Bus","der Weg"},
             {"das Land","die Straße","der Urlaub","die Stadt"},
             {"gehen","laufen","rennen","kommen"},
             {"die U-Bahn","der Zug","der Bahnhof","das Flugzeug"}
@@ -196,6 +196,18 @@ public class QuizMultipleChoice extends AppCompatActivity implements View.OnClic
 
             }
         });
-        alert.show();
+        final AlertDialog a = alert.create();
+        a.setOnShowListener(new DialogInterface.OnShowListener() {
+
+            @Override
+            public void onShow(DialogInterface dialog) {
+                Button posButton = a.getButton(DialogInterface.BUTTON_POSITIVE);
+                Button negButton = a.getButton(DialogInterface.BUTTON_NEGATIVE);
+                posButton.setTextColor(getResources().getColor(R.color.success));
+                negButton.setTextColor(getResources().getColor(R.color.fail));
+            }
+        });
+        a.show();
     }
+
 }

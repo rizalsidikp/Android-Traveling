@@ -110,7 +110,7 @@
                             android:backgroundTint="@color/buttonColor"
                             android:textSize="16sp"
                             android:textStyle="bold"
-                            android:textColor="@color/buttonText"
+                            android:textColor="#FFF"
                             android:layout_gravity="end"/>
 
                     </LinearLayout>
@@ -126,10 +126,10 @@
                             android:layout_height="match_parent"
                             android:text="falsch"
                             android:textAllCaps="false"
-                            android:backgroundTint="@color/buttonColor"
+                            android:backgroundTint="@color/buttonText"
                             android:textSize="16sp"
                             android:textStyle="bold"
-                            android:textColor="@color/buttonText"
+                            android:textColor="#FFF"
                             android:layout_gravity="start"/>
 
                     </LinearLayout>

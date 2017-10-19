@@ -4,6 +4,7 @@ import android.content.ClipData;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.graphics.Color;
 import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.support.v7.app.AlertDialog;
@@ -237,6 +238,17 @@ public class QuizDragNDrop extends AppCompatActivity implements View.OnClickList
 
             }
         });
-        alert.show();
+        final AlertDialog a = alert.create();
+        a.setOnShowListener(new DialogInterface.OnShowListener() {
+
+            @Override
+            public void onShow(DialogInterface dialog) {
+                Button posButton = a.getButton(DialogInterface.BUTTON_POSITIVE);
+                Button negButton = a.getButton(DialogInterface.BUTTON_NEGATIVE);
+                posButton.setTextColor(getResources().getColor(R.color.success));
+                negButton.setTextColor(getResources().getColor(R.color.fail));
+            }
+        });
+        a.show();
     }
 }

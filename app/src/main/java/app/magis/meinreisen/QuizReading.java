@@ -148,6 +148,18 @@ public class QuizReading extends AppCompatActivity implements View.OnClickListen
 
             }
         });
-        alert.show();
+        final AlertDialog a = alert.create();
+        a.setOnShowListener(new DialogInterface.OnShowListener() {
+
+            @Override
+            public void onShow(DialogInterface dialog) {
+                Button posButton = a.getButton(DialogInterface.BUTTON_POSITIVE);
+                Button negButton = a.getButton(DialogInterface.BUTTON_NEGATIVE);
+                posButton.setTextColor(getResources().getColor(R.color.success));
+                negButton.setTextColor(getResources().getColor(R.color.fail));
+            }
+        });
+        a.show();
     }
+
 }
